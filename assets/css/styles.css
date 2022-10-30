@@ -1,0 +1,233 @@
+:root {
+  /* Primary Colors */
+  --soft-orange: hsl(35, 77%, 62%);
+  --soft-red: hsl(5, 85%, 63%);
+  /* Neutral Colors */
+  --off-white: hsl(36, 100%, 99%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --dark-grayish-blue: hsl(236, 13%, 42%);
+  --very-dark-blue: hsl(240, 100%, 5%);
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  padding: 4em 10em 6em;
+  background-color: var(--off-white);
+  color: var(--dark-grayish-blue);
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+}
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+}
+header nav svg {
+  display: none;
+}
+header ul li a {
+  text-decoration: none;
+  color: var(--dark-grayish-blue);
+}
+header ul li a:hover {
+  color: var(--soft-red);
+}
+main {
+  max-width: 100%;
+  height: calc(100% - 70px);
+  display: grid;
+  column-gap: 1.5em;
+  grid-template-columns: repeat(3, calc(33.33% - 1em));
+  grid-template-rows: 43% 30% 27%;
+  align-content: space-between;
+}
+main div.pic {
+  grid-area: 1/1/2/3;
+  background-image: url(../images/image-web-3-desktop.jpg);
+  background-size: cover;
+  background-position: center;
+}
+main div.title,
+main div.read-more {
+  padding-top: 2em;
+  font-weight: 800;
+}
+main div.title h2 {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: var(--very-dark-blue);
+}
+main div.read-more {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-weight: normal;
+}
+main div.read-more a {
+  text-decoration: none;
+  background-color: var(--soft-red);
+  color: var(--off-white);
+  padding: 1em 2em;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  letter-spacing: 0.3em;
+}
+main div.read-more a:hover {
+  background-color: var(--very-dark-blue);
+}
+main aside {
+  grid-area: 1/3/3/4;
+  padding: 0 1.5em;
+  background-color: var(--very-dark-blue);
+  color: var(--dark-grayish-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+main aside h3 {
+  color: var(--soft-orange);
+  font-size: 2em;
+}
+article h4 {
+  font-weight: 700;
+  font-size: 1.25em;
+  color: var(--very-dark-blue);
+}
+article h4 a {
+  text-decoration: none;
+}
+main aside article h4 {
+  padding-bottom: 1em;
+}
+main aside article h4 a {
+  color: var(--off-white);
+}
+main aside article h4 a:hover {
+  color: var(--soft-orange);
+}
+main aside article {
+  padding-bottom: 1em;
+}
+main aside article:not(:last-child) {
+  border-bottom: 1px solid var(--dark-grayish-blue);
+}
+main > article {
+  display: flex;
+  padding-top: 2em;
+  gap: 1em;
+}
+main > article div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main > article img {
+  width: 33.33%;
+}
+main > article div span.num-span {
+  color: var(--grayish-blue);
+  font-size: 2em;
+  font-weight: 600;
+}
+main > article div h4 a {
+  color: var(--very-dark-blue);
+}
+main > article div h4 a:hover {
+  color: var(--soft-red);
+}
+
+/* Mobile */
+@media screen and (max-width: 375px) {
+  body {
+    min-height: auto;
+    padding: 1em;
+  }
+  header nav {
+    position: relative;
+  }
+  header ul {
+    display: none;
+  }
+  header nav.active ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    position: absolute;
+    background-color: var(--off-white);
+    width: 70vw;
+    height: 100vh;
+    z-index: 100;
+    right: -1em;
+    top: -1.8em;
+  }
+  header nav.active::before {
+    position: absolute;
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    right: 0;
+    top: -1.8em;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  header nav.active ul li {
+    padding-left: 1em;
+  }
+  header nav.active ul li a {
+    color: var(--very-dark-blue);
+    position: relative;
+    top: -9em;
+  }
+  header nav svg:first-of-type {
+    display: block;
+  }
+  header nav.active ul + svg {
+    display: block;
+    position: absolute;
+    z-index: 100;
+    top: -0.5em;
+    right: 0;
+  }
+  main {
+    grid-template-columns: 1fr;
+    grid-row: repeat(7, auto);
+  }
+  main * {
+    grid-column: 1 / -1;
+    padding: 0.5em 0;
+  }
+  main div.title,
+  main div.read-more {
+    padding: 0;
+  }
+  main div.read-more {
+    margin-top: -3.5em;
+  }
+  main div.pic {
+    grid-column: 1 / 2;
+    background-image: url(../images/image-web-3-mobile.jpg);
+  }
+  main aside {
+    grid-row: auto;
+    grid-column: auto;
+    margin: 2em 0;
+  }
+  main > article {
+    padding-top: 0.5em;
+  }
+  main > article img {
+    min-width: 33.33%;
+  }
+}

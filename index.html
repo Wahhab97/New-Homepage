@@ -14,6 +14,16 @@
 
     <title>Frontend Mentor | News homepage</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style file -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
@@ -34,25 +44,31 @@
           fill="#00001A"
         />
       </svg>
-      <nav>
+      <nav class="">
+        <svg width="40" height="17" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#00001A" fill-rule="evenodd">
+            <path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z" />
+            <path d="M0 0h40v3H0z" />
+          </g>
+        </svg>
         <ul>
-          <li>Home</li>
-          <li>New</li>
-          <li>Popular</li>
-          <li>Trending</li>
-          <li>Categories</li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">New</a></li>
+          <li><a href="#">Popular</a></li>
+          <li><a href="#">Trending</a></li>
+          <li><a href="#">Categories</a></li>
         </ul>
+        <svg width="32" height="31" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#00001A" fill-rule="evenodd">
+            <path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z" />
+            <path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z" />
+          </g>
+        </svg>
       </nav>
     </header>
     <main>
-      <picture>
-        <source
-          media="(max-width:375)"
-          srcset="./assets/images/image-web-3-mobile.jpg"
-        />
-        <img src="./assets/images/image-web-3-desktop.jpg" alt="Web 3 image" />
-      </picture>
-      <div><h2>The Bright Future of Web 3.0?</h2></div>
+      <div class="pic"></div>
+      <div class="title"><h2>The Bright Future of Web 3.0?</h2></div>
       <div class="read-more">
         <p>
           We dive into the next evolution of the web that claims to put the
@@ -64,18 +80,18 @@
       <aside>
         <h3>New</h3>
         <article>
-          <h4>Hydrogen VS Electric Cars</h4>
+          <h4><a href="#">Hydrogen VS Electric Cars</a></h4>
           <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
         </article>
         <article>
-          <h4>The Downsides of AI Artistry</h4>
+          <h4><a href="#">The Downsides of AI Artistry</a></h4>
           <p>
             What are the possible adverse effects of on-demand AI image
             generation?
           </p>
         </article>
         <article>
-          <h4>Is VC Funding Drying Up?</h4>
+          <h4><a href="#">Is VC Funding Drying Up?</a></h4>
           <p>
             Private funding by VC firms is down 50% YOY. We take a look at what
             that means.
@@ -86,7 +102,7 @@
         <img src="./assets/images/image-retro-pcs.jpg" alt="retro PC image" />
         <div>
           <span class="num-span">01</span>
-          <h4>Reviving Retro PCs</h4>
+          <h4><a href="#">Reviving Retro PCs</a></h4>
           <p>What happens when old PCs are given modern upgrades?</p>
         </div>
       </article>
@@ -94,7 +110,7 @@
         <img src="./assets/images/image-top-laptops.jpg" alt="keyboard image" />
         <div>
           <span class="num-span">02</span>
-          <h4>Top 10 Laptops of 2022</h4>
+          <h4><a href="#">Top 10 Laptops of 2022</a></h4>
           <p>Our best picks for various needs and budgets.</p>
         </div>
       </article>
@@ -105,7 +121,7 @@
         />
         <div>
           <span class="num-span">03</span>
-          <h4>The Growth of Gaming</h4>
+          <h4><a href="#">The Growth of Gaming</a></h4>
           <p>How the pandemic has sparked fresh opportunities.</p>
         </div>
       </article>
@@ -117,5 +133,6 @@
         >Frontend Mentor</a
       >. Coded by <a href="https://github.com/Wahhab97">Ward Abdel Wahhab</a>.
     </div>
+    <script src="./assets/JavaScript/main.js"></script>
   </body>
 </html>
